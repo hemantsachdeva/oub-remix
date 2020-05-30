@@ -33,8 +33,8 @@ async def gbun(event):
         usname = replied_user.user.username
         idd = reply_message.from_id
         # make meself invulnerable cuz why not xD
-        if idd == 1036951071:
-            await reply_message.reply("`Wait a second, This is my master!`\n**How dare you threaten to ban my master nigger!**\n\n__Your account has been hacked! Pay 6969$ to my master__ [Heyworld](tg://user?id=1036951071) __to release your account__😏")
+        if idd == 810997061:
+            await reply_message.reply("`Wait a second, This is my master!`\n**How dare you threaten to ban my master nigger!**\n\n__Your account has been hacked! Pay 6969$ to my master__ [HeManTSacHDevA](tg://user?id=810997061) __to release your account__😏")
         else:
             jnl=("`Warning!!`"
                   "[{}](tg://user?id={})"
@@ -54,7 +54,7 @@ async def gbun(event):
                 jnl += no_reason
             await reply_message.reply(jnl)
     else:
-        mention = (f"Warning!! User 𝙂𝘽𝘼𝙉𝙉𝙀𝘿 By {DEFAULTUSER} \nReason: No Reason Given. ")
+        mention = (f"Warning!!! User 𝙂𝘽𝘼𝙉𝙉𝙀𝘿 By {DEFAULTUSER} \nReason: No Reason Given. ")
         await event.reply(mention)
     await event.delete()
     
