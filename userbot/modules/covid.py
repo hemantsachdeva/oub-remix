@@ -25,14 +25,14 @@ async def corona(event):
             "`Last update : "
             f"{datetime.utcfromtimestamp(country_data['last_update'] // 1000).strftime('%Y-%m-%d %H:%M:%S')}`\n"
         )
-        output_text += f"Data provided by [john hopkins university](https://coronavirus.jhu.edu/map.html)"
+        output_text += f"`Don't worry Recovery Rate will be 100% SooooN`"
     else:
         output_text = "No information yet about this country!"
     await event.edit(f"Corona Virus Info in {country}:\n\n{output_text}")
 
 
-# CMD_HELP.update({
-#         "covid": 
-#         ".covid <country>"
-#         "\nUsage: Get an information about data covid-19 in your country.\n"
-#     })
+ CMD_HELP.update({
+         "covid": 
+         ".covid <country>"
+         "\nUsage: Get an information about data covid-19 in your country.\n"
+     })
