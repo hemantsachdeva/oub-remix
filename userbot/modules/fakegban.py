@@ -54,7 +54,11 @@ async def gbun(event):
                 jnl += no_reason
             await reply_message.reply(jnl)
     else:
+<<<<<<< HEAD
         mention = (f"Warning!!! User 𝙂𝘽𝘼𝙉𝙉𝙀𝘿 By {DEFAULTUSER} \nReason: No Reason Given. ")
+=======
+        mention = (f"Warning!! User 𝙂𝘽𝘼𝙉𝙉𝙀𝘿 By {DEFAULTUSER} \nReason: No Reason Given. ")
+>>>>>>> 6de0a7d8aaf162ab7157995ba669e93bac5d33ce
         await event.reply(mention)
     await event.delete()
     
