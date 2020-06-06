@@ -26,7 +26,7 @@ from userbot.events import register
 
 # ========================= CONSTANTS ============================
 UNAPPROVED_MSG = (
-    "`HeYa...THiS iS BoT working 24*7 for [HeManT](t.me/HeManTSacHDevA)...!\nHis notifications are off for PRIVATE MESSAGES and barely check PM so i prefer you to mention him(by @HeManTSacHDevA) in the group where u found him to let him notified or wait for his approval...🙃\nMessages remaining:2 \n\n`")
+    "HeYa...THiS iS BoT working 24*7 for [HeManT](t.me/HeManTSacHDevA)...!\nHis notifications are off for PRIVATE MESSAGES and barely check PM so i prefer you to mention him(by @HeManTSacHDevA) in the group where u found him to let him notified or wait for his approval...🙃\nMessages remaining:2 \n\n")
 # =================================================================
 
 NO_PM_LOG_USERS = []
@@ -77,8 +77,8 @@ async def permitpm(event):
 
                 if COUNT_PM[event.chat_id] > 2:
                     await event.respond(
-                        "`You were spamming my master's pm so I(BoT) blocked you without letting him([HeManT](t.me/HeManTSacHDevA)) know.`\n"
-                        "`Now wait if he see your message and approve you or not!.`"
+                        "You were SPAMMING my master's pm so I(BoT) BLOCKED you without letting him([HeManT](t.me/HeManTSacHDevA)) know.\n"
+                        "Now wait if he see your message and APPROVE/UNBLOCK you or not!."
                     )
 
                     try:
