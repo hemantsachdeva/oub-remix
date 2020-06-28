@@ -46,6 +46,7 @@ from search_engine_parser import GoogleSearch
 from googleapiclient.discovery import build
 from googleapiclient.errors import HttpError
 from googletrans import LANGUAGES, Translator
+from shutil import rmtree
 from gtts import gTTS, gTTSError
 from gtts.lang import tts_langs
 from emoji import get_emoji_regexp
@@ -59,8 +60,7 @@ from asyncio import sleep
 from userbot import CMD_HELP, BOTLOG, BOTLOG_CHATID, YOUTUBE_API_KEY, CHROME_DRIVER, GOOGLE_CHROME_BIN, bot, REM_BG_API_KEY, TEMP_DOWNLOAD_DIRECTORY, OCR_SPACE_API_KEY, LOGS
 from userbot.events import register
 from telethon.tl.types import DocumentAttributeAudio
-from userbot.utils import progress, humanbytes, time_formatter
-from userbot.google_images_download import googleimagesdownload
+from userbot.utils import progress, humanbytes, time_formatter, chrome, googleimagesdownload
 import subprocess
 from datetime import datetime
 import asyncurban
@@ -247,9 +247,9 @@ async def gsearch(q_event):
         page = 1
     search_args = (str(match), int(page))
     gsearch = GoogleSearch()
-    gresults = await gsearch.async_search(*search_args)
+    gresults = await gsearch.async_search(*search_args, cache=False)
     msg = ""
-    for i in range(10):
+    for i in range(7):
         try:
             title = gresults["titles"][i]
             link = gresults["links"][i]
@@ -390,7 +390,7 @@ async def _(event):
     if event.reply_to_msg_id:
         previous_message = await event.get_reply_message()
         text = previous_message.message
-        lan = input_str or "ml"
+        lan = input_str or "en"
     elif "|" in input_str:
         lan, text = input_str.split("|")
     else:
@@ -585,39 +585,30 @@ async def download_video(v_url):
         with YoutubeDL(opts) as rip:
             rip_data = rip.extract_info(url)
     except DownloadError as DE:
-        await v_url.edit(f"`{str(DE)}`")
-        return
+        return await v_url.edit(f"`{str(DE)}`")
     except ContentTooShortError:
-        await v_url.edit("`The download content was too short.`")
-        return
+        return await v_url.edit("`The download content was too short.`")
     except GeoRestrictedError:
-        await v_url.edit(
-            "`Video is not available from your geographic location due to geographic restrictions imposed by a website.`"
+        return await v_url.edit(
+            "`Video is not available from your geographic location "
+            "due to geographic restrictions imposed by a website.`"
         )
-        return
     except MaxDownloadsReached:
-        await v_url.edit("`Max-downloads limit has been reached.`")
-        return
+        return await v_url.edit("`Max-downloads limit has been reached.`")
     except PostProcessingError:
-        await v_url.edit("`There was an error during post processing.`")
-        return
+        return await v_url.edit("`There was an error during post processing.`")
     except UnavailableVideoError:
-        await v_url.edit("`Media is not available in the requested format.`")
-        return
+        return await v_url.edit("`Media is not available in the requested format.`")
     except XAttrMetadataError as XAME:
-        await v_url.edit(f"`{XAME.code}: {XAME.msg}\n{XAME.reason}`")
-        return
+        return await v_url.edit(f"`{XAME.code}: {XAME.msg}\n{XAME.reason}`")
     except ExtractorError:
-        await v_url.edit("`There was an error during info extraction.`")
-        return
+        return await v_url.edit("`There was an error during info extraction.`")
     except Exception as e:
-        await v_url.edit(f"{str(type(e)): {str(e)}}")
-        return
+        return await v_url.edit(f"{str(type(e)): {str(e)}}")
     c_time = time.time()
     if song:
-        await v_url.edit(f"`Preparing to upload song:`\
-        \n**{rip_data['title']}**\
-        \nby *{rip_data['uploader']}*")
+        await v_url.edit(
+            f"`Preparing to upload song:`\n**{rip_data['title']}**")
         await v_url.client.send_file(
             v_url.chat_id,
             f"{rip_data['id']}.mp3",
@@ -634,9 +625,8 @@ async def download_video(v_url):
         os.remove(f"{rip_data['id']}.mp3")
         await v_url.delete()
     elif video:
-        await v_url.edit(f"`Preparing to upload video:`\
-        \n**{rip_data['title']}**\
-        \nby *{rip_data['uploader']}*")
+        await v_url.edit(
+            f"`Preparing to upload video:`\n**{rip_data['title']}**")
         await v_url.client.send_file(
             v_url.chat_id,
             f"{rip_data['id']}.mp4",
