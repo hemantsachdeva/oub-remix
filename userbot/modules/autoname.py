@@ -12,7 +12,7 @@ from telethon.errors import FloodWaitError
 DEL_TIME_OUT = 60
 
 
-@command(outgoing=True, pattern="^.autotime$")
+@register(outgoing=True, pattern="^.autotime$")
 async def _(event):
     if event.fwd_from:
         return
