@@ -1,7 +1,7 @@
 [![Build Status](https://travis-ci.com/sahyam2019/oub-remix.svg?branch=sql-extended)](https://travis-ci.com/sahyam2019/oub-remix)
 # Project OpenUserBot Remix
 
-![logo](https://telegra.ph/file/12fd39f968f0892ae1a7e.jpg)
+![logo](https://instagram.fdel13-1.fna.fbcdn.net/v/t51.2885-15/e35/83963404_541188536502547_8495202370807847474_n.jpg?_nc_ht=instagram.fdel13-1.fna.fbcdn.net&_nc_cat=107&_nc_ohc=_GAhmfVILZgAX903cNa&oh=5b80e1f6a690c8ef51912a803a0dd61a&oe=5F23B9E1&ig_cache_key=MjI1MjM2OTQ4NDcxNzU3MzQxOQ%3D%3D.2&ig_cache_prefix=full_size_%7C%7C2252369484717573419_10986863881)
 
 ```
 #include <std/disclaimer.h>
