@@ -5,7 +5,8 @@ import asyncio
 import time
 from telethon.tl import functions
 from telethon.errors import FloodWaitError
-from userbot.utils import admin_cmd
+#from userbot.utils import admin_cmd
+from userbot import CMD_HELP
 from userbot import ALIVE_NAME
 
 
@@ -13,7 +14,8 @@ DEL_TIME_OUT = 60
 DEFAULTUSER = str(ALIVE_NAME) if ALIVE_NAME else "FridayUserbot"
 
 
-@borg.on(admin_cmd(pattern="autoname"))  # pylint:disable=E0602
+#@borg.on(admin_cmd(pattern="autoname"))  # pylint:disable=E0602
+@register(outgoing=True, pattern="^.autoname (.*)")
 async def _(event):
     if event.fwd_from:
         return
