@@ -5,7 +5,7 @@ import asyncio
 import time
 from telethon.tl import functions
 from telethon.errors import FloodWaitError
-from uniborg.util import admin_cmd
+from userbot.utils import admin_cmd
 from userbot import ALIVE_NAME
 
 
