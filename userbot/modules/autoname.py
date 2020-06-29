@@ -7,7 +7,8 @@ import pytz
 from telethon.tl import functions
 from telethon.tl.functions.account import UpdateUsernameRequest 
 from telethon.errors import FloodWaitError
-
+from userbot import bot
+from userbot.events import register
 
 DEL_TIME_OUT = 60
 
