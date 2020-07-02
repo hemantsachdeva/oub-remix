@@ -41,9 +41,9 @@ async def get_tz(con):
         return
 
 
-@register(outgoing=True, pattern="^.time(?: |$)(.*)(?<![0-9])(?: |$)([0-9]+)?")
+@register(outgoing=True, pattern="^.gettime(?: |$)(.*)(?<![0-9])(?: |$)([0-9]+)?")
 async def time_func(tdata):
-    """ For .time command, return the time of
+    """ For .gettime command, return the time of
         1. The country passed as an argument,
         2. The default userbot country(set it by using .settime),
         3. The server where the userbot runs.
@@ -86,7 +86,7 @@ async def time_func(tdata):
 
             return_str += "\n`Choose one by typing the number "
             return_str += "in the command.`\n"
-            return_str += f"`Example: .time {c_name} 2`"
+            return_str += f"`Example: .gettime {c_name} 2`"
 
             await tdata.edit(return_str)
             return
@@ -104,9 +104,9 @@ async def time_func(tdata):
         return
 
 
-@register(outgoing=True, pattern="^.date(?: |$)(.*)(?<![0-9])(?: |$)([0-9]+)?")
+@register(outgoing=True, pattern="^.getdate(?: |$)(.*)(?<![0-9])(?: |$)([0-9]+)?")
 async def date_func(dat):
-    """ For .date command, return the date of
+    """ For .getdate command, return the date of
         1. The country passed as an argument,
         2. The default userbot country(set it by using .settime),
         3. The server where the userbot runs.
@@ -149,7 +149,7 @@ async def date_func(dat):
 
             return_str += "\n`Choose one by typing the number "
             return_str += "in the command.`\n"
-            return_str += f"Example: .date {c_name} 2"
+            return_str += f"Example: .getdate {c_name} 2"
 
             await dat.edit(return_str)
             return
@@ -169,9 +169,9 @@ async def date_func(dat):
 
 CMD_HELP.update({
     "timedate":
-    "`.time` <country name/code> <timezone number>\
+    "`.gettime` <country name/code> <timezone number>\
 \nUsage: Usage: Get the time of a country. If a country has multiple timezones, it will list all of them and let you select one.\
-\n\n`.date` <country name/code> <timezone number>\
+\n\n`.getdate` <country name/code> <timezone number>\
 \nUsage: Get the date of a country. If a country has multiple timezones, it will list all of them and let you select one."
 })    
 
