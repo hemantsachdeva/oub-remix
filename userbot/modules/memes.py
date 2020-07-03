@@ -498,7 +498,7 @@ CHASE_STR = [
     "As The Doctor would say... RUN!",
 ]
 
-""HELLOSTR = [
+HELLOSTR = [
     "Hi !",
     "‘Ello, gov'nor!",
     "What’s crackin’?",
@@ -518,7 +518,7 @@ CHASE_STR = [
     "`I come for peace!`",
     "Ahoy, matey!",
     "`Hi !`",
-]""
+]
 
 PROSTR = [
     "`You is pro user.`",
