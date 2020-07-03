@@ -498,7 +498,7 @@ CHASE_STR = [
     "As The Doctor would say... RUN!",
 ]
 
-HELLOSTR = [
+""HELLOSTR = [
     "Hi !",
     "‘Ello, gov'nor!",
     "What’s crackin’?",
@@ -518,7 +518,7 @@ HELLOSTR = [
     "`I come for peace!`",
     "Ahoy, matey!",
     "`Hi !`",
-]
+]""
 
 PROSTR = [
     "`You is pro user.`",
@@ -1035,7 +1035,7 @@ async def zal(zgfy):
     await zgfy.edit("".join(reply_text))
 
 
-@register(outgoing=True, pattern="^.hi$")
+@register(outgoing=True, pattern="^-hi$")
 async def hoi(hello):
     """ Greet everyone! """
     await hello.edit(choice(HELLOSTR))
@@ -1565,7 +1565,7 @@ CMD_HELP.update({
 \nUsage: kensar moon animation.\
 \n\n`.clock`\
 \nUsage: kensar clock animation.\
-\n\n`.hi`\
+\n\n`-hi`\
 \nUsage: Greet everyone!\
 \n\n`.coinflip` <heads/tails>\
 \nUsage: Flip a coin !!\
