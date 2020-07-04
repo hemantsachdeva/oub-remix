@@ -3,6 +3,9 @@
 # Licensed under the Raphielscape Public License, Version 1.d (the "License");
 # you may not use this file except in compliance with the License.
 
+from bs4 import BeautifulSoup as bs
+import requests
+import json
 import os
 import aria2p
 import math
@@ -227,7 +230,6 @@ async def check_progress_for_dl(gid, event, previous):
                 await event.edit(
                     "Download Auto Canceled :\n`{}`\nYour Torrent/Link is Dead."
                     .format(file.name))
-
 
 CMD_HELP.update({
     "aria":

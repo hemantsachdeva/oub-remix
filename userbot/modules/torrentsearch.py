@@ -107,3 +107,4 @@ CMD_HELP.update({
     \n\n`.tsearch <query>`\
     \nUsage: Searches torrent."
 })
+
