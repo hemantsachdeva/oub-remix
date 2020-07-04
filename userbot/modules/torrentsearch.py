@@ -1,8 +1,15 @@
 from bs4 import BeautifulSoup as bs 
 import requests
 import json
-from userbot.events import register 
-
+import os
+import aria2p
+import math
+from asyncio import sleep
+from subprocess import PIPE, Popen
+from userbot import LOGS, CMD_HELP, TEMP_DOWNLOAD_DIRECTORY
+from userbot.events import register
+from userbot.utils import humanbytes
+from requests import get
 
 def dogbin(magnets):
 	counter = 0
@@ -16,7 +23,7 @@ def dogbin(magnets):
 		counter = counter + 1
 	return urls	
 	
-@register(outgoing=True, pattern="^.tsearch(?: |$)(.*)")
+@register(outgoing=True, pattern="^.torsearch(?: |$)(.*)")
 async def tor_search(event):
 	if event.fwd_from:
 		return 
@@ -87,3 +94,16 @@ async def tor_search(event):
 
 	await event.edit(msg,link_preview=False)
     
+CMD_HELP.update({
+    "tor":
+    "`.amag` [Magnet Link] (or) .ator [path to torrent file]\
+    \nUsage: Downloads the file into your userbot server storage.\
+    \n\n`.apause` (or) .aresume\
+    \nUsage: Pauses/resumes on-going downloads.\
+    \n\n`.aclear`\
+    \nUsage: Clears the download queue, deleting all on-going downloads.\
+    \n\n`.ashow`\
+    \nUsage: Shows progress of the on-going downloads.\
+    \n\n`.tsearch <query>`\
+    \nUsage: Searches torrent."
+})
