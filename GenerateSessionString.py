@@ -10,7 +10,7 @@ Apna Telegram Account login kar bsdk
 Click on API Development Tools Blah Blah Maa ki chu
 Create a new application, by entering the required details of teri Maa ka bhosda
 Session String STARTS from 1 and ends with = (COPY THE WHOLE CODE)
-Samajhre ho? CHalo abi abi niklo pehli fursat me""")
+Samajhre ho? CHalo abi niklo pehli fursat me""")
 
 
 APP_API_ID = int(input("Madarchod APP API ID Daal Behen Ke Lawde: "))
