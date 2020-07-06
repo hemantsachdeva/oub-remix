@@ -7,6 +7,7 @@
 #include <std/disclaimer.h>
 /**
     Your Telegram account may get banned.
+    I(HeManTSacHDevA) commited many changes in the bot.
     I am not responsible for any improper use of this bot
     This bot is intended for the purpose of having fun with memes,
     as well as efficiently managing groups.
