@@ -1,0 +1,2 @@
+language = "python3"
+run = "rm -rf oub-remix && git clone https://github.com/hemantsachdeva/oub-remix && cd oub-remix && pip install telethon && pip install --upgrade pip && python3 GenerateSessionString.py && rm -rf oub-remix && pip install speedtest-cli && speedtest-cli"
