@@ -21,13 +21,18 @@
 /**
 ```
 
-## How To Host?
+**Step1:Get Session String.**
 
-The easiest way to deploy this great bot! is click on button below
-Make sure you have an account of heroku and follow all the steps required.
+**#click_the_photo_below_to_get_session_string**
 
-Deploy to Heroku:
+[![Get Session String For Userbot](https://telegra.ph/file/5894d1a89eea2f74b8711.jpg)](https://oub-remix.hemantsachdeva.repl.run/)
+
+**Step2: Use Heroku Deploy Button For Fast Deploy.**
+
+**#click_the_photo_below_to_deploy**
+
 <p align="left"><a href="https://heroku.com/deploy?template=https://github.com/sahyam2019/oub-remix/tree/sql-extended"> <img src="https://www.herokucdn.com/deploy/button.svg" alt="Deploy to Heroku" /></a></p>
+
 
 ## Groups and support
 
