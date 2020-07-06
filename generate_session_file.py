@@ -9,6 +9,12 @@ from telethon import TelegramClient
 from dotenv import load_dotenv
 import os
 
+print("""Aa gaye Betichod string generate karne. 
+lodu use ==>> my.telegram.com (vpn use karna) <<==
+Apna Telegram Account login kar btc
+Click on API Development Tools Blah Blah Maa ki chu
+Create a new application, by entering the required details Maa ka bhosda""")
+
 load_dotenv("config.env")
 
 API_KEY = os.environ.get("API_KEY", None)
