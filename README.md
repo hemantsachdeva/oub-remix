@@ -1,4 +1,3 @@
-[![Build Status](https://travis-ci.com/sahyam2019/oub-remix.svg?branch=sql-extended)](https://travis-ci.com/sahyam2019/oub-remix)
 # Project OpenUserBot Remix
 
 [![INSTA BANNER](https://telegra.ph/file/e61460343b1136082ddf1.jpg)](https://instagram.com/hemant_007.me)
