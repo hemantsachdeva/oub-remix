@@ -17,8 +17,8 @@ Create a new application, by entering the required details Maa ka bhosda""")
 
 load_dotenv("config.env")
 
-API_KEY = os.environ.get("API_KEY", None)
-API_HASH = os.environ.get("API_HASH", None)
+API_KEY = int(input("Madarchod APP ID Daal Behen Ke Lawde: "))
+API_HASH = input("Gandu Khush Matt Ho Ab API HASH daal: ")
 
 bot = TelegramClient('userbot', API_KEY, API_HASH)
 bot.start()
