@@ -9,7 +9,7 @@ from userbot import CMD_HELP, BOTLOG_CHATID
 
 
 @register(outgoing=True,
-          pattern=r"\?\w*",
+          pattern=r"\+\w*",
           ignore_unsafe=True,
           disable_errors=True)
 async def on_snip(event):
@@ -70,7 +70,7 @@ async def on_snip_save(event):
     elif event.reply_to_msg_id and not string:
         rep_msg = await event.get_reply_message()
         string = rep_msg.text
-    success = "Snip {} successfully. Use `?{}` anywhere to get it"
+    success = "Snip {} successfully. Use `+{}` anywhere to get it"
     if add_snip(keyword, string, msg_id) is False:
         await event.edit(success.format('updated', keyword))
     else:
@@ -91,9 +91,9 @@ async def on_snip_list(event):
     for a_snip in all_snips:
         if message == "`No snips available right now.`":
             message = "Available snips:\n"
-            message += f"`?{a_snip.snip}`\n"
+            message += f"`+{a_snip.snip}`\n"
         else:
-            message += f"`?{a_snip.snip}`\n"
+            message += f"`+{a_snip.snip}`\n"
 
     await event.edit(message)
 
@@ -116,7 +116,7 @@ async def on_snip_delete(event):
 CMD_HELP.update({
     "snips":
     "\
-?<snip_name>\
++<snip_name>\
 \nUsage: Gets the specified snip, anywhere.\
 \n\n`.snip` <name> <data> or reply to a message with .snip <name>\
 \nUsage: Saves the message as a snip (global note) with the name. (Works with pics, docs, and stickers too!)\
