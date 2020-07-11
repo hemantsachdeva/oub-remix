@@ -79,4 +79,3 @@ youtube_search
 justwatch
 deezloader
 zipfile38
-math
