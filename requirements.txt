@@ -8,6 +8,7 @@ wget
 TgCrypto>=1.2.0
 cffi>=1.0.0
 dnspython
+dropbox
 emoji
 PyPDF2
 cryptg
@@ -78,3 +79,5 @@ youtube_search
 justwatch
 deezloader
 zipfile38
+os
+math
