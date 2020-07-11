@@ -6,6 +6,7 @@ import asyncio
 import dropbox
 import math
 import os
+from userbot.events import register
 from userbot import (DROP_BOX_ACCESS_TOKEN)
 
 # get your own access token from https://www.dropbox.com/developers/apps/ and fill here
